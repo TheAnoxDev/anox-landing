@@ -1,38 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANOX</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANOX</title>
+
+<style>
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0B0F14;
+    color: #BFC7D5;
+    overflow-x: hidden;
+}
+
+/* ===== BACKGROUND GLOW ===== */
+.bg-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,229,255,0.15), transparent 60%);
+    top: -200px;
+    left: -200px;
+    animation: float 8s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%,100% { transform: translate(0,0); }
+    50% { transform: translate(120px,80px); }
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 110px;
+    color: #00E5FF;
+    letter-spacing: 12px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+p {
+    font-size: 22px;
+    margin-top: 20px;
+    opacity: 0.85;
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+    margin-top: 50px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    margin: 10px;
+    border: 1px solid #00E5FF;
+    color: #00E5FF;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00E5FF;
+    color: #0B0F14;
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background: #00E5FF;
+    color: #0B0F14;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.section h2 {
+    color: #00E5FF;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+.section p {
+    max-width: 600px;
+    margin: auto;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+/* ===== SCROLL EFFECT ===== */
+.card {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid rgba(0,229,255,0.2);
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #00E5FF;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    opacity: 0.5;
+}
+
+</style>
+
 </head>
 
-<body style="margin:0;background:#0B0F14;color:#BFC7D5;font-family:Arial">
+<body>
 
-    <div style="text-align:center;padding-top:120px">
+<div class="bg-glow"></div>
 
-        <h1 style="font-size:70px;color:#00E5FF;letter-spacing:6px;margin:0">
-            ANOX
-        </h1>
+<!-- HERO -->
+<div class="hero">
+    <h1>ANOX</h1>
+    <p>We don’t follow the future. We create it.</p>
 
-        <p style="font-size:20px;margin-top:20px">
-            We don’t follow the future. We create it.
-        </p>
-
-        <div style="margin-top:40px">
-            <a href="#" style="padding:12px 24px;border:1px solid #00E5FF;color:#00E5FF;text-decoration:none;margin:10px">
-                Explore
-            </a>
-
-            <a href="#" style="padding:12px 24px;background:#00E5FF;color:#0B0F14;text-decoration:none;margin:10px">
-                Our Vision
-            </a>
-        </div>
-
-        <div style="margin-top:80px;font-size:14px;opacity:0.6">
-            AI • Software • Future Systems
-        </div>
-
+    <div class="buttons">
+        <a href="#about" class="btn">Explore</a>
+        <a href="#vision" class="btn btn-primary">Our Vision</a>
     </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+    <h2>ABOUT</h2>
+    <p>ANOX is a future-driven technology initiative focused on AI systems, software engineering, and digital innovation.</p>
+
+    <div class="card">AI Systems</div>
+    <div class="card">Software Engineering</div>
+    <div class="card">Automation Tools</div>
+</div>
+
+<!-- VISION -->
+<div id="vision" class="section">
+    <h2>VISION</h2>
+    <p>Engineering what does not exist yet. Building systems that define the next era of technology.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 ANOX — Built for what’s next.
+</footer>
 
 </body>
 </html>
